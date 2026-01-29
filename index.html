@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="img/WhatsApp Image 2026-01-28 at 22.12.03.jpeg" type="image/x-icon">
+
+<!-- IMPORTANTE PARA CELULAR -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Iguim programador</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+
+  /* Coração */
+  .heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: #ff4da6;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .heart span {
+    transform: rotate(45deg);
+    z-index: 2;
+  }
+
+  .heart::before,
+  .heart::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: #ff4da6;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  .heart::before {
+    top: -50px;
+    left: 0;
+  }
+
+  .heart::after {
+    left: 50px;
+    top: 0;
+  }
+
+  /* Imagem responsiva */
+  #imagem {
+    display: none;
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;      /* 🔑 adapta ao celular */
+    max-width: 320px;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="heart" onclick="mostrarConteudo()">
+    <span>Clique</span>
+  </div>
+
+  <!-- IMAGEM -->
+  <img id="imagem" src="img/WhatsApp Image 2026-01-28 at 22.12.03.jpeg" alt="Imagem especial">
+
+  <!-- MÚSICA (TEM QUE ESTAR NA PASTA DO SITE) -->
+  <audio id="musica" src="d:\CONDE DO FORRÓ 2015 SEM VINHETA  - MAYCON DJ\01-destruiu-nosso-amor.mp3"></audio>
+</div>
+
+<script>
+function mostrarConteudo() {
+  document.getElementById("imagem").style.display = "block";
+
+  const musica = document.getElementById("musica");
+  musica.volume = 0.3;
+  musica.loop = true;
+  musica.play();
+}
+</script>
+</body>
+</html>
